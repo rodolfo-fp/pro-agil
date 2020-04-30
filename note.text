@@ -1,0 +1,31 @@
+## Adiciona uma migration
+
+dotnet ef migrations add init
+
+## Rodar migrations
+
+dotnet ef database update
+
+## Criação projeto classlib
+
+dotnet new classlib -n ProAgil.Domain
+
+## Crição de uma solução
+
+dotnet new sln -n ProAgil
+
+## Criar uma nova referência
+
+dotnet add ProAgil.Repository/ProAgil.Repository.csproj reference ProAgil.Domain/ProAgil.Domain.csproj
+
+## Adicionar projeto a solução
+
+dotnet sln ProAgil.sln add ProAgil.Domain/ProAgil.Domain.csproj 
+
+## Criar as migrations dentro do Repositório
+
+dotnet ef --startup-project ../ProAgil.WebAPI migrations add init
+
+## Executar migrations no Repositório
+
+dotnet ef --startup-project ../ProAgil.WebAPI database update
